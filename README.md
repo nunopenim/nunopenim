@@ -1,8 +1,9 @@
 ### About me:
   - Experienced Debian and Debian based distros user.
   - Enthusiast user of Arch Linux.
+  - Not a user of RHEL based distros, but I can learn quickly.
   - Comfortable with macOS Terminal, but a little lost using the GUI
-  - Not too comfortable with Windows, Powershell is a bit confusing still, but I can learn quickly.
+  - Not too comfortable with Windows, Powershell is a bit confusing to me, will take time to get used.
   - Relearning the Kotlin language.
   - Comfortable with C, Assembly (x86 mostly, but can use other types), C++, Java and Python.
   - Not too good with Web stuff, but can get around CSS and HTML when needed.
