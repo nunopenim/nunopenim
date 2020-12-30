@@ -1,7 +1,7 @@
 ### Statistics about me
 
 <p>
-  <img width="40%" alt="stats" align="left" src="https://github-readme-stats.vercel.app/api?username=nunopenim&count_private=true&show_icons=true&hide_border=true&count_private=true">
+  <img width="40%" alt="stats" align="right" src="https://github-readme-stats.vercel.app/api?username=nunopenim&count_private=true&show_icons=true&hide_border=true&count_private=true">
   <br>
   <br>
   <br>
@@ -9,7 +9,7 @@
   <br>
   <br>
   <br>
-  <img width="40%" alt="lang" align="left" src="https://github-readme-stats.vercel.app/api/top-langs/?username=nunopenim&count_private=true&layout=compact&hide_border=true&langs_count=10" />
+  <img width="40%" alt="lang" align="right" src="https://github-readme-stats.vercel.app/api/top-langs/?username=nunopenim&count_private=true&layout=compact&hide_border=true&langs_count=10" />
 </p>
 
 <!--
