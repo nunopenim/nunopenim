@@ -1,9 +1,5 @@
-### Statistics about me
-
+### Language Statistics
 <p>
-  <img width="50%" alt="stats" align="center" src="https://github-readme-stats.vercel.app/api?username=nunopenim&count_private=true&show_icons=true&hide_border=true&count_private=true">
-  <br>
-  <br>
   <img width="50%" alt="lang" align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=nunopenim&count_private=true&layout=compact&hide_border=true&langs_count=10" />
 </p>
 
