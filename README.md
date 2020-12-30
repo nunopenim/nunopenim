@@ -1,7 +1,7 @@
 ### About me:
   - Experienced Debian and Debian based distros user.
   - Enthusiast user of Arch Linux.
-  - Not a user of macOS, but comfortable with it's Terminal.
+  - Not a user of macOS, but comfortable with its Terminal.
   - Not a Windows user, will take time to be used to the Windows Terminal (WSL is welcome though!).
   - Relearning the Kotlin language.
   - Comfortable with C, Assembly (x86 mostly, but can use other types), C++, Java and Python.
