@@ -1,14 +1,14 @@
-<p align=left>
+<div align=left>
   <li>bullet test</li>
   <li>bullet test</li>
   <li>bullet test</li>
   <li>bullet test</li>
   <li>bullet test</li>
-</p>
+</div>
 
-<p align=right>
+<div align=right>
   <img width="50%" alt="lang" src="https://github-readme-stats.vercel.app/api/top-langs/?username=nunopenim&count_private=true&layout=compact&hide_border=true&langs_count=10" />
-</p>
+</div>
 
 <!--
 **nunopenim/nunopenim** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
