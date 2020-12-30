@@ -1,6 +1,8 @@
-### Language Statistics
+### About me
+  - (Re)Learning Kotlin mostly these days.
+
 <p>
-  <img width="50%" alt="lang" align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=nunopenim&count_private=true&layout=compact&hide_border=true&langs_count=10" />
+  <img width="50%" alt="lang" align="left" src="https://github-readme-stats.vercel.app/api/top-langs/?username=nunopenim&count_private=true&layout=compact&hide_border=true&langs_count=10" />
 </p>
 
 <!--
