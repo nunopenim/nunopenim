@@ -1,13 +1,4 @@
-<div overflow=hidden>
-  <div float=left>
-    <li>bullet test</li>
-    <li>bullet test</li>
-    <li>bullet test</li>
-    <li>bullet test</li>
-    <li>bullet test</li>
-  </div>
-
-  <div float=right align=right>
-    <img width="50%" alt="lang" src="https://github-readme-stats.vercel.app/api/top-langs/?username=nunopenim&count_private=true&layout=compact&hide_border=true&langs_count=10" />
-  </div>
-</div>
+<p>
+  <img width="40%" align="left" alt="stats" src="https://github-readme-stats.vercel.app/api?username=nunopenim&count_private=true&show_icons=true&hide_border=true&count_private=true">
+  <img width="40%" align="right" alt="lang" src="https://github-readme-stats.vercel.app/api/top-langs/?username=nunopenim&layout=compact&hide_border=true&langs_count=10" />
+</p>
