@@ -1,7 +1,7 @@
 ### About me:
   - Experienced Debian and Debian based distros user.
   - Enthusiast user of Arch Linux.
-  - Not a user of RHEL based distros, but I can learn quickly.
+  - Not a user of RHEL, Slackware, Gentoo or SUSE (and based distros) but I can learn quickly.
   - Comfortable with macOS Terminal, but a little lost using the GUI
   - Not too comfortable with Windows, Powershell is a bit confusing to me, will take time to get used.
   - Relearning the Kotlin language.
