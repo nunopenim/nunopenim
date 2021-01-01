@@ -1,7 +1,9 @@
 # Arch Linux Installation Guide
+
 > Nuno Penim, 2020
 
 ## Preface
+
 Congratulations, if you are reading this, you found a very special document I wrote not only to help myself, but to help other like minded individuals.
 
 After this, you should have a full working Arch Linux installation, running the Gnome DE and with the GDM. If this is not what you are here for, Google how to do your specific Setup. I will not answer any pull requests.
@@ -12,10 +14,23 @@ Every problem you run into can be solved either by looking in the [Arch Wiki](ht
 
 ## Installation instructions and Steps
 
-### ToDO
+### Step 0: Backup your data
+
+Or prepare it to be migrated. We will format your HDD/SDD entirely, so... yeah
+
+### Step 1: Download the Arch Linux ISO file
+
+The title pretty much explains it. To do it, access [https://archlinux.org/download/](https://archlinux.org/download/) and download the most recent ISO file. I recommend using BitTorrent, but it's up to you.
+
+### Step 2: Make a bootable flash drive.
+
+I recommend using [Etcher](https://www.balena.io/etcher/) for this step. Download the suitable version for you (Windows, macOS or Linux). The Linux version is usually an AppImage file, which runs (or should run) on all distros. If you are geeky, you could use dd on Linux, works too.
+
+Always keep this flash drive around after, maybe label it. It will be important as it might be the only way you can solve any possible boot issues in the future.
 
 ## Special Thanks
 
  - [Arch Linux](https://archlinux.org/), for their amazing, lightweight and flexible Linux distribution.
  - [Arch Linux Wiki](https://wiki.archlinux.org/), for helping me figure out what I needed and how it worked.
  - Some Threads in the [Arch Linux Forum](https://bbs.archlinux.org/), for helping me solving some issues, like how to get my printer working.
+ - [balenaEtcher](https://www.balena.io/etcher/), for their amazing flashing software.
