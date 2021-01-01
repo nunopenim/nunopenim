@@ -86,7 +86,7 @@ Assuming you are back in the Arch terminal, format the new partition as EXT4. Yo
 
 Now you are ready to install Arch Linux!
 
-### Step 7: Install Arch Linux (Finally, uh?)
+### Step 7: Install Arch Linux (Finally, eh?)
 
 If you reached this far, you have a very strong willpower. I admire you, and I won't stop you.
 
