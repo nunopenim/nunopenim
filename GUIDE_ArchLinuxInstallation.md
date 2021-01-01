@@ -70,7 +70,7 @@ If your network uses WPA or WPA2 (password, not Enterprise authentication), to c
 
 Use ```quit``` to exit the utility and perform a ping (for example ```ping 8.8.8.8```), to check if you have network access. Ping should run indefinitely, and not show errors like "Network is unreachable". To quit ping, use the **CTRL+C** combination.
 
-For a full list of options inside the IWCTL utility, type ```help```.
+For a full list of options and operations inside the IWCTL utility, type ```help```.
 
 ## Special Thanks
 
