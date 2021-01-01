@@ -72,6 +72,24 @@ Use ```quit``` to exit the utility and perform a ping (for example ```ping 8.8.8
 
 For a full list of options and operations inside the IWCTL utility, type ```help```.
 
+### Step 6: Partitioning and formatting the Disk
+
+**Warning: possible loss of data after this. Final warning: This setup is for CSM/BIOS machines, not UEFI**
+
+We will use the ```fdisk``` utility for this. List all the disks, by using ```fdisk -l```. Currently, it should appear both the USB Drive and the internal drive(s). Keep in mind the name of the proper one. In my case it was ```/dev/sda``` (as I mentioned earlier, it can also be ```/dev/nvme0``` or similar if you are using a NVMe SSD).
+
+Run fdisk with the destination drive. In my case it was ```/dev/sda```, so I executed as ```fdisk /dev/sda```. Type ```d``` and press Enter/Return until all the partitions are deleted.
+
+With the disk fully wiped now, type ```o``` and press Enter/Return. This will create a new MBR partition table.
+
+Create a **new primary partition** by typing ```n``` and pressing Enter/Return. Select the needed size (I recommend using the whole HDD, in the future I will add a specific SETUP with a Swap partition).
+
+After this, you should have your drive with a single partition, where you will install the operating system. Type ```w``` to write all the changes to the disk, and exit fdisk.
+
+Assuming you are back in the Arch terminal, format the new partition as EXT4. You can do this using the command ```mkfs.ext4 /dev/sda1```
+
+Now you are ready to install Arch Linux!
+
 ## Special Thanks
 
  - [Arch Linux](https://archlinux.org/), for their amazing, lightweight and flexible Linux distribution.
