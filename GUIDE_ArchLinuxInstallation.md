@@ -30,6 +30,14 @@ Always keep this flash drive around after, maybe label it. It will be important 
 
 ### Step 3: Configure your machine
 
+In your BIOS menu, setup the boot mode to **BIOS-CSM**, **CSM** or something similar, and not to UEFI. If it is present, **Disable Secure Boot**. If, like in my machine, a new selector pops up, to select the SATA mode, select **AHCI**, if you use a SATA SSD. You can leave it on IDE if you use a HDD, it makes no difference. If you use a PCIe M.2 SSD, look up what's the best for you (NVMe probably).
+
+As for peripherials such as the Web Camera, I recommend activating everything. It is not a requirement, but it is needed to make sure everything works correctly. After the installation, you can disable the ones you don't use again.
+
+**Note for PCIe M.2 SSD users:** You probably still can use this guide, but more in the front, when I mention something like ```/dev/sda```, in your case it should be ```/dev/mmc0``` or similar. I don't own a machine with this technology, so I am not sure. 
+
+### Step 4: Booting into the Live USB environment
+
 ## Special Thanks
 
  - [Arch Linux](https://archlinux.org/), for their amazing, lightweight and flexible Linux distribution.
