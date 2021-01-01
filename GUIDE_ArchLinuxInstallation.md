@@ -160,6 +160,18 @@ Congratulations, you now have a sudo user.
 
 ### Step 10: Installing the X environment and Gnome
 
+Almost there, now all that is missing is the DE and WM. Firstly, install the X enviroment. You can do it running the command ```pacman -Syu xorg```.
+
+Now install Gnome, with the command ```pacman -Syu gnome```. The Gnome package contains gdm, so you don't have to worry about it.
+
+After it finishes installing, create symlinks for the service to start up automatically. This can be done with the command ```systemctl enable gdm.service```.
+
+I also recommend enabling NetworkManager, since it might be disabled by default, otherwise you will not have networking. This can be done with the command ```systemctl enable NetworkManager.service```.
+
+### Step 11: Finishing up
+
+
+
 ## Special Thanks
 
  - [Arch Linux](https://archlinux.org/), for their amazing, lightweight and flexible Linux distribution.
