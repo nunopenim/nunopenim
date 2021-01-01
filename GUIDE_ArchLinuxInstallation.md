@@ -118,7 +118,19 @@ These settings can be changed later on, so don't worry if you think they are not
 
 #### Step 8c: Network configurations
 
+Every computer needs a hostname, to connect to the internet. With nano, create and edit the ```/etc/hostname``` file. Do this with ```nano /etc/hostname```. Inside write the hostname you want, in my case it was ```nuno-arch```. Save and exit with the **CTRL+W**, Enter/Return and **CTRL+X** trick.
 
+You will also need a hosts file. Create it with the command ```touch /etc/hosts```. Open it with nano, in a similar fashion of the previous file. Bellow it's my hosts configuration. I recommend you to use a similar one, but replacing ```nuno-arch``` with the hostname you chose previously!
+
+```
+127.0.0.1	localhost
+::1		localhost
+127.0.1.1	nuno-arch #replace this!
+```
+
+Networkwise, you should be done!
+
+#### Step 8d: 
 
 ## Special Thanks
 
