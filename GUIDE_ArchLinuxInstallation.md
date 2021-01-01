@@ -86,6 +86,18 @@ Assuming you are back in the Arch terminal, format the new partition as EXT4. Yo
 
 Now you are ready to install Arch Linux!
 
+### Step 7: Install Arch Linux (Finally, uh?)
+
+If you reached this far, you have a very strong willpower. I admire you, and I won't stop you.
+
+Anyway, type ```pacman -Syy```. This will sync the PacMan repositories. Similar to how Debian and Debian-based distros syncronize package lists with ```apt-get```.
+
+After PacMan did it's thing, mount your newly made partition (I will assume it's ```/dev/sda1```, from the previous step). You can do this by typing ```mount /dev/sda1 /mnt```.
+
+We are ready! Type ```pacstrap /mnt base base-devel linux linux-firmware nano```. This will install Arch Linux, the Linux Kernel and Firmware, some extra libraries for developers and nano, because... you will need a text editor. You can use vim too if you want, I won't stop you, but not my thing.
+
+#### To be finished
+
 ## Special Thanks
 
  - [Arch Linux](https://archlinux.org/), for their amazing, lightweight and flexible Linux distribution.
