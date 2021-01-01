@@ -100,7 +100,7 @@ This step will take a while depending on your Internet connection.
 
 ### Step 8: Configuring the System
 
-#### Step 8a: Boot configurations
+#### Step 8a: File system configurations
 
 After installing the packages I specified previously, you will need to configure them properly, otherwise your system will not boot. Start by generating a [fstab file](https://wiki.archlinux.org/index.php/fstab). This can be done using the command ```genfstab -U /mnt >> /mnt/etc/fstab```. Good, now you have the correct File System parameters for Arch to boot.
 
@@ -130,7 +130,9 @@ You will also need a hosts file. Create it with the command ```touch /etc/hosts`
 
 Networkwise, you should be done!
 
-#### Step 8d: 
+#### Step 8d: Setting up the Root password
+
+This is a simple, yet important step, due to security. To do such, type ```passwd``` and use a memorable password. That's it.
 
 ## Special Thanks
 
