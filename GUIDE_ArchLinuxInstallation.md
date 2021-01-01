@@ -2,6 +2,14 @@
 
 > Nuno Penim, 2020
 
+## Disclaimer
+
+I am not responsible for any data loss that might occur. This guide will tell you how to install Arch Linux as **the single OS in your machine**. Back up your stuff, and don't use this guide if you are looking for a dual boot.
+
+You can use this guide freely as a base for a guide of your own to do other setup options (such as a UEFI version, or Dual Boot version), if you give me proper credits.
+
+Thank you.
+
 ## Preface
 
 Congratulations, if you are reading this, you found a very special document I wrote not only to help myself, but to help other like minded individuals.
