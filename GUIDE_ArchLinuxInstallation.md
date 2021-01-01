@@ -130,9 +130,19 @@ You will also need a hosts file. Create it with the command ```touch /etc/hosts`
 
 Networkwise, you should be done!
 
-#### Step 8d: Setting up the Root password
+#### Step 8d: Root account password
 
 This is a simple, yet important step, due to security. To do such, type ```passwd``` and use a memorable password. That's it.
+
+#### Step 8e: Bootloader configuration
+
+We will use the GRUB bootloader. A quick reminder, **this guide is only for BIOS/CSM mode**.
+
+You can start by installing the GRUB bootloader with PacMan: ```pacman -Syu grub```. 
+
+After installing the package, install it to your system drive (in our case, ```/dev/sda```), with the command ```grub-install /dev/sda```.
+
+Finally, generate a boot configuration: ```grub-mkconfig -o /boot/grub/grub.cfg```
 
 ## Special Thanks
 
