@@ -102,7 +102,9 @@ This step will take a while depending on your Internet connection.
 
 #### Step 8a: File system configurations
 
-After installing the packages I specified previously, you will need to configure them properly, otherwise your system will not boot. Start by generating a [fstab file](https://wiki.archlinux.org/index.php/fstab). This can be done using the command ```genfstab -U /mnt >> /mnt/etc/fstab```. Good, now you have the correct File System parameters for Arch to boot.
+After installing the packages I specified previously, you will need to configure them properly, otherwise your system will not boot. Start by generating a [fstab file](https://wiki.archlinux.org/index.php/fstab). This can be done using the command ```genfstab -U /mnt >> /mnt/etc/fstab```. 
+
+Good, now you have the correct File System parameters for Arch to boot.
 
 #### Step 8b: System configurations
 
