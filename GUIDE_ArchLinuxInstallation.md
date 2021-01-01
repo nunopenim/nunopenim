@@ -54,11 +54,11 @@ Fully shutdown your PC. Insert (if not yet there) the Arch Linux USB you made in
 
 If you ever used the Linux terminal, by now you realized this blank Terminal screen is a terminal like any other, and probably did some simple commands (because you have an ADHD level like mine - that's okay, you are still beautiful) and realized the keyboard layout might not be the correct one for you (unless you are in the US).
 
-To get to the point, the command ```ls /usr/share/kbd/keymaps/i386/**/*.map.gz``` will **show you the avaliable keyboard layouts**. It can be a never ending list, use the keyboard **Page Up** and **Page Down** keys to navigate. 
-
-After figuring out some possible keyboard layout candidates, load one and test. You can do such via the ```loadkeys``` command. 
+To get to the point, the command ```ls /usr/share/kbd/keymaps/i386/**/*.map.gz``` will **show you the avaliable keyboard layouts**. It can be a never ending list, use the keyboard **Page Up** and **Page Down** keys to navigate. After figuring out some possible keyboard layout candidates, load one and test. You can do such via the ```loadkeys``` command. 
 
 As an example, I need the QWERTY European Portuguese keyboard layout. I located two possible candidates: ```pt-latin1.map.gz``` and ```pt-latin9.map.gz```. I ran ```loadkeys pt-latin1``` and tested using some characters in the terminal. Since it was the correct layout for me, I advanced.
+
+#### Step 5b: Wi-Fi connection
 
 ## Special Thanks
 
