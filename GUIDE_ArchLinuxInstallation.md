@@ -80,11 +80,7 @@ We will use the ```fdisk``` utility for this. List all the disks, by using ```fd
 
 Run fdisk with the destination drive. In my case it was ```/dev/sda```, so I executed as ```fdisk /dev/sda```. Type ```d``` and press Enter/Return until all the partitions are deleted.
 
-With the disk fully wiped now, type ```o``` and press Enter/Return. This will create a new MBR partition table.
-
-Create a **new primary partition** by typing ```n``` and pressing Enter/Return. Select the needed size (I recommend using the whole HDD, in the future I will add a specific SETUP with a Swap partition).
-
-After this, you should have your drive with a single partition, where you will install the operating system. Type ```w``` to write all the changes to the disk, and exit fdisk.
+With the disk fully wiped now, type ```o``` and press Enter/Return. This will create a new MBR partition table. Create a **new primary partition** by typing ```n``` and pressing Enter/Return. Select the needed size (I recommend using the whole HDD, in the future I will add a specific SETUP with a Swap partition). After this, you should have your drive with a single partition, where you will install the operating system. Type ```w``` to write all the changes to the disk, and exit fdisk.
 
 Assuming you are back in the Arch terminal, format the new partition as EXT4. You can do this using the command ```mkfs.ext4 /dev/sda1```
 
