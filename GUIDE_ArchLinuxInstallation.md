@@ -90,7 +90,7 @@ Now you are ready to install Arch Linux!
 
 If you reached this far, you have a very strong willpower. I admire you, and I won't stop you.
 
-Anyway, type ```pacman -Syy```. This will sync the PacMan repositories. Similar to how Debian and Debian-based distros syncronize package lists with ```apt-get```.
+Anyway, type ```pacman -Syy```. This will sync the PacMan repositories. Similar to how Debian and Debian-based distros syncronize package lists with ```apt-get update```.
 
 After PacMan did it's thing, mount your newly made partition (I will assume it's ```/dev/sda1```, from the previous step). You can do this by typing ```mount /dev/sda1 /mnt```.
 
