@@ -170,7 +170,21 @@ I also recommend enabling NetworkManager, since it might be disabled by default,
 
 ### Step 11: Finishing up
 
+Everything should be done now. Exit the chroot by typing ```exit```. Shutdown the machine, with the command ```shutdown now```. Remove the USB drive.
 
+### Step 12: The first boot
+
+There are a few tweaks you might need to do. Start up your machine and boot. If everything worked fine, you are now greeted by the GDM login window. Login
+
+Try running the terminal, from the activities menu. If it works, you are good to go! Have fun.
+
+If it fails to launch however, don't panic. I know Linux OSes need their terminal, but don't panic. Go to ```Gnome Settings > Region & Language```. It probably is saying some of the configurations are invalid (remember Step 8b?). Tweak these to suit your needs and reboot. Now the terminal should open. Have fun!
+
+## Final notes
+
+With this guide, it should have been possible for you to have a running Arch Linux installation. Any smaller problems can be solved with help from the Wiki or the Foruns. You can also search in Google, you will likely find your issue and how to solve it.
+
+Remember to have fun. Don't bloat Arch too much, otherwise it loses it's purposes (Yeah you can start with the yabayabayaba Gnome is a RAM hog, but I don't really care, I like it). Cheers everyone.
 
 ## Special Thanks
 
