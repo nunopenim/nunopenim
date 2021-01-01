@@ -64,11 +64,9 @@ If you don't have an Ethernet connection (although it would be good, less of an 
 
 Inside the IWCTL utility, type ```device list```. This will show your Wi-Fi compatible devices. In my case, mine is named ```wlan0```. 
 
-Perform a network scan, by typing ```station wlan0 scan```. 
+Perform a network scan, by typing ```station wlan0 scan```. After this, to check all the available networks, use ```station wlan0 get-networks```. Make sure your network is on this list. 
 
-After this, to check all the available networks, use ```station wlan0 get-networks```. Make sure your network is on this list. 
-
-If your network uses WPA or WPA2, to connect to it, just type ```station wlan0 connect "<network name>" psk```. It then will ask you for a password, and that should be it. 
+If your network uses WPA or WPA2 (password, not Enterprise authentication), to connect to it, just type ```station wlan0 connect "<network name>" psk```. It then will ask you for a password, and that should be it. 
 
 Use ```quit``` to exit the utility and perform a ping (for example ```ping 8.8.8.8```), to check if you have network access. Ping should run indefinitely, and not show errors like "Network is unreachable". To quit ping, use the **CTRL+C** combination.
 
