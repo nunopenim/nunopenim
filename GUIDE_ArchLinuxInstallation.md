@@ -144,6 +144,22 @@ After installing the package, install it to your system drive (in our case, ```/
 
 Finally, generate a boot configuration: ```grub-mkconfig -o /boot/grub/grub.cfg```
 
+### Step 9: Creating a user account and configuring SUDO
+
+In this step, we will create a user account. Run the command ```useradd -m <usr>``` to create a new account, replacing <usr> with the desired username (in my specific case, it is ```useradd -m nuno```, which creates a new account named "nuno"). The -m flag will also create a Home directory for you, which saves the hassle of setting it up after.
+
+After creating the user, set up a password for this new user, using the ```passwd``` command. For example, with my account, it would be ```passwd nuno```. It is similar to step 8d.
+
+Now that you have a new user, we will configure SUDO, since you shouldn't be using the root account at all. Start by installing it with pacman: ```pacman -Syu sudo```.
+
+SUDO comes with a special editor called ```visudo```, to allow us to edit it's configurations without damaging sudo. However visudo needs to be configured to use a CLI text editor. In our case, as with the rest of this guide, we will use ```nano``` as our text editor. To use nano as the visudo editor, run the command ```EDITOR=nano visudo```.
+
+To add your newly created user to the sudoers, all you need to do is locate the line that says ```root ALL=(ALL) ALL``` and bellow add the line ```<usr> ALL=(ALL) ALL```, where <usr> is the username you created. As an example, in my case it would be ```nuno ALL=(ALL) ALL```. Save and exit, using the **CTRL+W**, Enter/Return and **CTRL+X** trick, that you should know by now.
+
+Congratulations, you now have a sudo user.
+
+### Step 10: Installing the X environment and Gnome
+
 ## Special Thanks
 
  - [Arch Linux](https://archlinux.org/), for their amazing, lightweight and flexible Linux distribution.
