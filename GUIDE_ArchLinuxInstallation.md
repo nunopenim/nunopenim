@@ -94,9 +94,31 @@ Anyway, type ```pacman -Syy```. This will sync the PacMan repositories. Similar 
 
 After PacMan did it's thing, mount your newly made partition (I will assume it's ```/dev/sda1```, from the previous step). You can do this by typing ```mount /dev/sda1 /mnt```.
 
-We are ready! Type ```pacstrap /mnt base base-devel linux linux-firmware nano```. This will install Arch Linux, the Linux Kernel and Firmware, some extra libraries for developers and nano, because... you will need a text editor. You can use vim too if you want, I won't stop you, but not my thing.
+We are ready! Type ```pacstrap /mnt base base-devel linux linux-firmware nano```. This will install Arch Linux, the Linux Kernel and Firmware, some extra libraries for developers, nano, because... you will need a text editor. You can use vim instead of nano if you want, but having a CLI text editor is an important tool and requirement.
 
-#### To be finished
+This step will take a while depending on your Internet connection.
+
+### Step 8: Configuring the System
+
+#### Step 8a: Boot configurations
+
+After installing the packages I specified previously, you will need to configure them properly, otherwise your system will not boot. Start by generating a [fstab file](https://wiki.archlinux.org/index.php/fstab). This can be done using the command ```genfstab -U /mnt >> /mnt/etc/fstab```. Good, now you have the correct File System parameters for Arch to boot.
+
+#### Step 8b: System configurations
+
+Now we will configure the System itself. Start by chrooting into it, by doing ```arch-chroot /mnt```. This is your system now, it no longer is the Live CD/USB. Your keyboard *might* be in the default settings, if such, refer to Step 5a again! Networking should still work fine, though.
+
+We will start by configuring the Timezone. Run the ```timedatectl list-timezones``` command to list all available timezones. In my case, I will use ```Europe/Lisbon```. After you find the correct timezone for you, you can set it by running the command ```timedatectl set-timezone <TZ>```. In my case: ```timedatectl set-timezone Europe/Lisbon```.
+
+The next step will be setting the default Language/Locale. Run ```nano /etc/locale.gen``` to open the ```/etc/locale.gen``` file (or use the text editor you installed in Step 7). In this file, uncomment your prefered Language and Locale settings (delete the # in front), in my case it was ```en_US.UTF-8```. Save and quit the editor. In Nano this is done with **CTRL+W**, Enter/Return, and **CTRL+X**
+
+After doing this, regenerate the locales with the command ```locale-gen```. Add your preferred locale to the locale.conf file, with the echo command, for example in my case ```echo LANG=en_US.UTF-8 > /etc/locale.conf```, and export it to bash (so that we don't have to reboot the machine, it's really a bad time to do such now), with the command ```export LANG=en_US.UTF-8```.
+
+These settings can be changed later on, so don't worry if you think they are not the correct ones. It's better to have *something* than *nothing*.
+
+#### Step 8c: Network configurations
+
+
 
 ## Special Thanks
 
