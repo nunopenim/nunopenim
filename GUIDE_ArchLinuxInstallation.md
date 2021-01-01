@@ -42,7 +42,7 @@ In your BIOS menu, setup the boot mode to **BIOS-CSM**, **CSM** or something sim
 
 As for peripherials such as the Web Camera, I recommend activating everything. It is not a requirement, but it is needed to make sure everything works correctly. After the installation, you can disable the ones you don't use again.
 
-**Note for PCIe M.2 SSD users:** You probably still can use this guide, but more in the front, when I mention something like ```/dev/sda```, in your case it should be ```/dev/mmc0``` or similar. I don't own a machine with this technology, so I am not sure. 
+**Note for PCIe M.2 SSD users:** You probably still can use this guide, but more in the front, when I mention something like ```/dev/sda```, in your case it should be ```/dev/nvme0``` or similar. I don't own a machine with this technology, so I am not sure. 
 
 ### Step 4: Booting into the Live USB environment
 
