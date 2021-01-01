@@ -60,6 +60,20 @@ As an example, I need the QWERTY European Portuguese keyboard layout. I located 
 
 #### Step 5b: Wi-Fi connection
 
+If you don't have an Ethernet connection (although it would be good, less of an hassle to setup), you can connect to Wi-Fi, via the terminal. This is done via the ```iwctl``` utility. To open it, just type ```iwctl``` on the terminal.
+
+Inside the IWCTL utility, type ```device list```. This will show your Wi-Fi compatible devices. In my case, mine is named ```wlan0```. 
+
+Perform a network scan, by typing ```station wlan0 scan```. 
+
+After this, to check all the available networks, use ```station wlan0 get-networks```. Make sure your network is on this list. 
+
+If your network uses WPA or WPA2, to connect to it, just type ```station wlan0 connect "<network name>" psk```. It then will ask you for a password, and that should be it. 
+
+Use ```quit``` to exit the utility and perform a ping (for example ```ping 8.8.8.8```), to check if you have network access. Ping should run indefinitely, and not show errors like "Network is unreachable". To quit ping, use the **CTRL+C** combination.
+
+For a full list of options inside the IWCTL utility, type ```help```.
+
 ## Special Thanks
 
  - [Arch Linux](https://archlinux.org/), for their amazing, lightweight and flexible Linux distribution.
