@@ -112,7 +112,7 @@ Now we will configure the System itself. Start by chrooting into it, by doing ``
 
 We will start by configuring the Timezone. Run the ```timedatectl list-timezones``` command to list all available timezones. In my case, I will use ```Europe/Lisbon```. After you find the correct timezone for you, you can set it by running the command ```timedatectl set-timezone <TZ>```. In my case: ```timedatectl set-timezone Europe/Lisbon```.
 
-The next step will be setting the default Language/Locale. Run ```nano /etc/locale.gen``` to open the ```/etc/locale.gen``` file (or use the text editor you installed in Step 7). In this file, uncomment your prefered Language and Locale settings (delete the # in front), in my case, I selected ```en_US.UTF-8```. Save and quit the editor. In Nano this is done with **CTRL+W**, Enter/Return, and **CTRL+X**
+The next step will be setting the default Language/Locale. Run ```nano /etc/locale.gen``` to open the ```/etc/locale.gen``` file (or use the text editor you installed in Step 7). In this file, uncomment your prefered Language and Locale settings (delete the # in front), in my case, I selected ```en_US.UTF-8```. Save and quit the editor. In Nano this is done with **CTRL+O**, Enter/Return, and **CTRL+X**
 
 After doing this, regenerate the locales with the command ```locale-gen```. Add your preferred locale to the locale.conf file, with the echo command, for example in my case ```echo LANG=en_US.UTF-8 > /etc/locale.conf```, and export it to bash (so that we don't have to reboot the machine, it's really a bad time to do such now), with the command ```export LANG=en_US.UTF-8```.
 
@@ -120,7 +120,7 @@ These settings can be changed later on, so don't worry if you think they are not
 
 #### Step 8c: Network configurations
 
-Every computer needs a hostname, to be identified in a network. With nano, create and edit the ```/etc/hostname``` file. Do this with ```nano /etc/hostname```. Inside write the hostname you want, in my case it was ```nuno-arch```. Save and exit with the **CTRL+W**, Enter/Return and **CTRL+X** trick.
+Every computer needs a hostname, to be identified in a network. With nano, create and edit the ```/etc/hostname``` file. Do this with ```nano /etc/hostname```. Inside write the hostname you want, in my case it was ```nuno-arch```. Save and exit with the **CTRL+O**, Enter/Return and **CTRL+X** trick.
 
 You will also need a hosts file. Create it with the command ```touch /etc/hosts```. Open it with nano, in a similar fashion of the previous file. Bellow it's my hosts configuration. I recommend you to use a similar one, but replacing ```nuno-arch``` with the hostname you chose previously!
 
@@ -156,7 +156,7 @@ Now that you have a new user, we will configure SUDO, since you shouldn't be usi
 
 SUDO comes with a special editor called ```visudo```, to allow us to edit it's configurations without damaging sudo. However visudo needs to be configured to use a CLI text editor. In our case, as with the rest of this guide, we will use ```nano``` as our text editor. To use nano as the visudo editor, run the command ```EDITOR=nano visudo```.
 
-To add your newly created user to the sudoers, all you need to do is locate the line that says ```root ALL=(ALL) ALL``` and bellow add the line ```<usr> ALL=(ALL) ALL```, where <usr> is the username you created. As an example, in my case it would be ```nuno ALL=(ALL) ALL```. Save and exit, using the **CTRL+W**, Enter/Return and **CTRL+X** trick, that you should know by now.
+To add your newly created user to the sudoers, all you need to do is locate the line that says ```root ALL=(ALL) ALL``` and bellow add the line ```<usr> ALL=(ALL) ALL```, where <usr> is the username you created. As an example, in my case it would be ```nuno ALL=(ALL) ALL```. Save and exit, using the **CTRL+O**, Enter/Return and **CTRL+X** trick, that you should know by now.
 
 Congratulations, you now have a sudo user.
 
