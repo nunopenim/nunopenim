@@ -1,6 +1,6 @@
 # Arch Linux Installation Guide
 
-> Nuno Penim, 2020
+> Nuno Penim, 2021
 
 ## Disclaimer
 
