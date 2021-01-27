@@ -6,7 +6,7 @@
 
 I am not responsible for any data loss that might occur. This guide will tell you how to install Arch Linux as **the single OS in your machine**. Back up your stuff, and don't use this guide if you are looking for a dual boot.
 
-You can use this guide freely as a base for a guide of your own to do other setup options (such as a UEFI version, or Dual Boot version), if you give me proper credits.
+You can use this guide freely as a base for a guide of your own to do other setup options (such as a Dual Boot version), if you give me proper credits.
 
 Thank you.
 
@@ -16,9 +16,9 @@ Congratulations, if you are reading this, you found a very special document I wr
 
 After this, you should have a full working Arch Linux installation, running the Gnome DE and with the GDM. If this is not what you are here for, Google how to do your specific Setup. I will not answer any pull requests.
 
-This was done specifically in a 2012 Toshiba Portégé Z930, with an Intel Core i7-3667U, 12GiB of RAM and 256GB of SSD. It should work on any other machine though. **I did not use UEFI!**
+This was done specifically in a 2020 Asus VivoBook X521IA (M533IA), with an AMD Ryzen 7 4700U, 16GiB of RAM and a 1TB NVMe SSD. It should work on any other machine though, with UEFI support. If you are looking for a BIOS/CSM version, you can check out my [older guide](https://github.com/nunopenim/nunopenim/blob/main/GUIDE_ArchLinuxInstallationBIOS-CSM.md)
 
-Every problem you run into can be solved either by looking in the [Arch Wiki](https://wiki.archlinux.org/), or by searching in the [Forum](https://bbs.archlinux.org/). Currently, everything in my machine works fine (even the Fingerprint Sensor, SD Card Reader and Bluetooth). External peripherals, such as my Wi-Fi printer work as well!
+Every problem you run into can be solved either by looking in the [Arch Wiki](https://wiki.archlinux.org/), or by searching in the [Forum](https://bbs.archlinux.org/). Currently, everything in my machine works fine, except Suspending. This is due to AMD's new s2idle not being yet supported fully by the stable version of the Linux Kernel, and this laptop not having deep sleep. External peripherals, such as my Wi-Fi printer work fine, however!
 
 ## Installation instructions and Steps
 
@@ -38,11 +38,11 @@ Always keep this flash drive around after, maybe label it. It will be important 
 
 ### Step 3: Configure your machine
 
-In your BIOS menu, setup the boot mode to **BIOS-CSM**, **CSM** or something similar, and not to UEFI. If it is present, **Disable Secure Boot**. If, like in my machine, a new selector pops up, to select the SATA mode, select **AHCI**, if you use a SATA SSD. You can leave it on IDE if you use a HDD, it makes no difference. If you use a PCIe M.2 SSD, look up what's the best for you (NVMe probably).
+Disable Secure Boot! That's all I have to say. If you use a SATA SSD, set SATA mode to AHCI.
 
 As for peripherials such as the Web Camera, I recommend activating everything. It is not a requirement, but it is needed to make sure everything works correctly. After the installation, you can disable the ones you don't use again.
 
-**Note for PCIe M.2 SSD users:** You probably still can use this guide, but more in the front, when I mention something like ```/dev/sda```, in your case it should be ```/dev/nvme0``` or similar. I don't own a machine with this technology, so I am not sure. 
+**Note for PCIe M.2 SSD users:** You probably still can use this guide, but more in the front, when I mention something like ```/dev/sda```, in your case it should be ```/dev/nvme0n1``` or similar. The guide is made for SATA drives right now, but in future, it will be updated!
 
 ### Step 4: Booting into the Live USB environment
 
@@ -80,9 +80,13 @@ We will use the ```fdisk``` utility for this. List all the disks, by using ```fd
 
 Run fdisk with the destination drive. In my case it was ```/dev/sda```, so I executed as ```fdisk /dev/sda```. Type ```d``` and press Enter/Return until all the partitions are deleted.
 
-With the disk fully wiped now, type ```o``` and press Enter/Return. This will create a new MBR partition table. Create a **new primary partition** by typing ```n``` and pressing Enter/Return. Select the needed size (I recommend using the whole HDD, in the future I will add a specific SETUP with a Swap partition). After this, you should have your drive with a single partition, where you will install the operating system. Type ```w``` to write all the changes to the disk, and exit fdisk.
+With the disk fully wiped now, type ```g``` and press Enter/Return. This will create a new GPT partition table. Create a **new primary partition** by typing ```n``` and pressing Enter/Return. Make it 500MB. After creating, type ```t``` and press Enter/Return. This will change the partition type to EFI System, instead of Linux.
 
-Assuming you are back in the Arch terminal, format the new partition as EXT4. You can do this using the command ```mkfs.ext4 /dev/sda1```
+Select the needed size (I recommend using the whole HDD, in the future I will add a specific SETUP with a Swap partition). After this, you should have your drive with a single partition, where you will install the operating system. 
+
+Type ```w``` to write all the changes to the disk, and exit fdisk.
+
+Assuming you are back in the Arch terminal, format the new partitions. The first one should be FAT32: do it using ```mkfs.fat -F32 /dev/sda1```. The second one should be EXT4. You can do this using the command ```mkfs.ext4 /dev/sda2```.
 
 Now you are ready to install Arch Linux!
 
@@ -138,11 +142,9 @@ This is a simple, yet important step, due to security. To do such, type ```passw
 
 #### Step 8e: Bootloader configuration
 
-We will use the GRUB bootloader. A quick reminder, **this guide is only for BIOS/CSM mode**.
+We will use the GRUB bootloader. A quick reminder, **this guide is only for UEFI mode**.
 
-You can start by installing the GRUB bootloader with PacMan: ```pacman -Syu grub```. 
-
-After installing the package, install it to your system drive (in our case, ```/dev/sda```), with the command ```grub-install /dev/sda```.
+You can start by installing the GRUB bootloader with PacMan: ```pacman -Syu grub efibootmgr```. Next, create the directory to mount the EFI partition and mount it: ```mkdir /boot/efi && mount /dev/sda1 /boot/efi```. After this, install GRUB to this directory: ```grub-install --target=x86_64-efi --bootloader-id=GRUB --efi-directory=/boot/efi```.
 
 Finally, generate a boot configuration: ```grub-mkconfig -o /boot/grub/grub.cfg```
 
@@ -187,6 +189,11 @@ If it fails to launch however, don't panic. I know Linux OSes need their termina
 With this guide, it should have been possible for you to have a running Arch Linux installation. Any smaller problems can be solved with help from the Wiki or the Foruns. You can also search in Google, you will likely find your issue and how to solve it.
 
 Remember to have fun. Don't bloat Arch too much, otherwise it loses it's purposes (Yeah you can start with the yabayabayaba Gnome is a RAM hog, but I don't really care, I like it). Cheers everyone.
+
+## Troubleshooting
+
+- You can boot to a black screen with a blinking cursor. However you can do Alt+F2 and back to Alt+F1, and Gnome should now boot fine. This is an issue related to the ```amdgpu``` driver (probably can happen with nvidia too) not loading on the correct time. Look it up on Arch Wiki, or even Google. This issue is everywhere and you shouldn't have an hard time figuring it :) 
+
 
 ## Special Thanks
 
