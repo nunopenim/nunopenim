@@ -42,7 +42,7 @@ Disable Secure Boot! That's all I have to say. If you use a SATA SSD, set SATA m
 
 As for peripherials such as the Web Camera, I recommend activating everything. It is not a requirement, but it is needed to make sure everything works correctly. After the installation, you can disable the ones you don't use again.
 
-**Note for PCIe M.2 SSD users:** You probably still can use this guide, but more in the front, when I mention something like ```/dev/sda```, in your case it should be ```/dev/nvme0n1``` or similar. The guide is made for SATA drives right now, but in future, it will be updated!
+**Note for SATA SSD users:** You probably still can use this guide, but more in the front, when I mention something like ```/dev/nvme0n1```, in your case it should be ```/dev/sda``` or similar. The guide is made for NVMe M.2 drives, because this is the future.
 
 ### Step 4: Booting into the Live USB environment
 
@@ -76,9 +76,9 @@ For a full list of options and operations inside the IWCTL utility, type ```help
 
 **Warning: possible loss of data after this. Final warning: This setup is for CSM/BIOS machines, not UEFI**
 
-We will use the ```fdisk``` utility for this. List all the disks, by using ```fdisk -l```. Currently, it should appear both the USB Drive and the internal drive(s). Keep in mind the name of the proper one. In my case it was ```/dev/sda``` (as I mentioned earlier, it can also be ```/dev/nvme0``` or similar if you are using a NVMe SSD).
+We will use the ```fdisk``` utility for this. List all the disks, by using ```fdisk -l```. Currently, it should appear both the USB Drive and the internal drive(s). Keep in mind the name of the proper one. In my case it was ```/dev/nvme0n1``` (as I mentioned earlier, it can also be ```/dev/sda``` or similar if you are using a NVMe SSD).
 
-Run fdisk with the destination drive. In my case it was ```/dev/sda```, so I executed as ```fdisk /dev/sda```. Type ```d``` and press Enter/Return until all the partitions are deleted.
+Run fdisk with the destination drive. In my case it was ```/dev/nvme0n1```, so I executed as ```fdisk /dev/nvme0n1```. Type ```d``` and press Enter/Return until all the partitions are deleted.
 
 With the disk fully wiped now, type ```g``` and press Enter/Return. This will create a new GPT partition table. Create a **new primary partition** by typing ```n``` and pressing Enter/Return. Make it 500MB. After creating, type ```t``` and press Enter/Return. This will change the partition type to EFI System, instead of Linux.
 
@@ -86,7 +86,7 @@ Select the needed size (I recommend using the whole HDD, in the future I will ad
 
 Type ```w``` to write all the changes to the disk, and exit fdisk.
 
-Assuming you are back in the Arch terminal, format the new partitions. The first one should be FAT32: do it using ```mkfs.fat -F32 /dev/sda1```. The second one should be EXT4. You can do this using the command ```mkfs.ext4 /dev/sda2```.
+Assuming you are back in the Arch terminal, format the new partitions. The first one should be FAT32: do it using ```mkfs.fat -F32 /dev/nvme0n1p1```. The second one should be EXT4. You can do this using the command ```mkfs.ext4 /dev/nvme0n1p2```.
 
 Now you are ready to install Arch Linux!
 
@@ -96,7 +96,7 @@ If you reached this far, you have a very strong willpower. I admire you, and I w
 
 Anyway, type ```pacman -Syy```. This will sync the PacMan repositories. Similar to how Debian and Debian-based distros syncronize package lists with ```apt-get update```.
 
-After PacMan did it's thing, mount your newly made partition (I will assume it's ```/dev/sda1```, from the previous step). You can do this by typing ```mount /dev/sda1 /mnt```.
+After PacMan did it's thing, mount your newly made partition (I will assume it's ```/dev/nvme0n1p2```, from the previous step). You can do this by typing ```mount /dev/nvme0n1p2 /mnt```.
 
 We are ready! Type ```pacstrap /mnt base base-devel linux linux-firmware nano```. This will install Arch Linux, the Linux Kernel and Firmware, some extra libraries for developers, nano, because... you will need a text editor. You can use vim instead of nano if you want, but having a CLI text editor is an important tool and requirement.
 
@@ -144,7 +144,7 @@ This is a simple, yet important step, due to security. To do such, type ```passw
 
 We will use the GRUB bootloader. A quick reminder, **this guide is only for UEFI mode**.
 
-You can start by installing the GRUB bootloader with PacMan: ```pacman -Syu grub efibootmgr```. Next, create the directory to mount the EFI partition and mount it: ```mkdir /boot/efi && mount /dev/sda1 /boot/efi```. After this, install GRUB to this directory: ```grub-install --target=x86_64-efi --bootloader-id=GRUB --efi-directory=/boot/efi```.
+You can start by installing the GRUB bootloader with PacMan: ```pacman -Syu grub efibootmgr```. Next, create the directory to mount the EFI partition and mount it: ```mkdir /boot/efi && mount /dev/nvme0n1p1 /boot/efi```. After this, install GRUB to this directory: ```grub-install --target=x86_64-efi --bootloader-id=GRUB --efi-directory=/boot/efi```.
 
 Finally, generate a boot configuration: ```grub-mkconfig -o /boot/grub/grub.cfg```
 
@@ -192,7 +192,7 @@ Remember to have fun. Don't bloat Arch too much, otherwise it loses it's purpose
 
 ## Troubleshooting
 
-- You can boot to a black screen with a blinking cursor. However you can do Alt+F2 and back to Alt+F1, and Gnome should now boot fine. This is an issue related to the ```amdgpu``` driver (probably can happen with nvidia too) not loading on the correct time. Look it up on Arch Wiki, or even Google. This issue is everywhere and you shouldn't have an hard time figuring it :) 
+- You can boot to a black screen with a blinking cursor. However you can do Alt+F2 and back to Alt+F1, and Gnome/GDM should now boot fine. This is an issue related to X.org and the ```amdgpu``` driver (probably can happen with nvidia too) not loading on the correct time. Look it up on Arch Wiki, or even Google. This issue is everywhere and you shouldn't have an hard time figuring it :) 
 
 
 ## Special Thanks
