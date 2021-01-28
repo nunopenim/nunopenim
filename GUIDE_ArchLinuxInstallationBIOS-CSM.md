@@ -18,6 +18,8 @@ After this, you should have a full working Arch Linux installation, running the 
 
 This was done specifically in a 2012 Toshiba Portégé Z930, with an Intel Core i7-3667U, 12GiB of RAM and 256GB of SSD. It should work on any other machine though. **I did not use UEFI!**
 
+This guide is relatively more simpler and stripped down, related to the [new guide](https://github.com/nunopenim/nunopenim/blob/main/GUIDE_ArchLinuxInstallation.md). I encourage you to check both guides and only follow the important BIOS/CSM bits in this one.
+
 Every problem you run into can be solved either by looking in the [Arch Wiki](https://wiki.archlinux.org/), or by searching in the [Forum](https://bbs.archlinux.org/). Currently, everything in my machine works fine (even the Fingerprint Sensor, SD Card Reader and Bluetooth). External peripherals, such as my Wi-Fi printer work as well!
 
 ## Installation instructions and Steps
