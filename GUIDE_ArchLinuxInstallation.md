@@ -82,7 +82,7 @@ Run fdisk with the destination drive. In my case it was ```/dev/nvme0n1```, so I
 
 With the disk fully wiped now, type ```g``` and press Enter/Return. This will create a new GPT partition table. Create a **new primary partition** by typing ```n``` and pressing Enter/Return. Make it 500MB. After creating, type ```t``` and press Enter/Return. This will change the partition type to EFI System, instead of Linux.
 
-Select the needed size (I recommend using the whole HDD, in the future I will add a specific SETUP with a Swap partition). After this, you should have your drive with a single partition, where you will install the operating system. 
+Select the needed size (I recommend using the whole SSD, in the future I will add a specific SETUP with a Swap partition). After this, you should have your drive with a single partition, where you will install the operating system. 
 
 Type ```w``` to write all the changes to the disk, and exit fdisk.
 
