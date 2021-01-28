@@ -74,7 +74,7 @@ For a full list of options and operations inside the IWCTL utility, type ```help
 
 ### Step 6: Partitioning and formatting the Disk
 
-**Warning: possible loss of data after this. Final warning: This setup is for CSM/BIOS machines, not UEFI**
+**Warning: possible loss of data after this. Final warning: This setup is for UEFI machines, not BIOS/CSM**
 
 We will use the ```fdisk``` utility for this. List all the disks, by using ```fdisk -l```. Currently, it should appear both the USB Drive and the internal drive(s). Keep in mind the name of the proper one. In my case it was ```/dev/nvme0n1``` (as I mentioned earlier, it can also be ```/dev/sda``` or similar if you are using a NVMe SSD).
 
