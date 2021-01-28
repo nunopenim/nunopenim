@@ -18,7 +18,7 @@ After this, you should have a full working Arch Linux installation, running the 
 
 This was done specifically in a 2020 Asus VivoBook X521IA (M533IA), with an AMD Ryzen 7 4700U, 16GiB of RAM and a 1TB NVMe SSD. It should work on any other machine though, with UEFI support. If you are looking for a BIOS/CSM version, you can check out my [older guide](https://github.com/nunopenim/nunopenim/blob/main/GUIDE_ArchLinuxInstallationBIOS-CSM.md)
 
-Every problem you run into can be solved either by looking in the [Arch Wiki](https://wiki.archlinux.org/), or by searching in the [Forum](https://bbs.archlinux.org/). Currently, everything in my machine works fine, except Suspending. This is due to AMD's new s2idle not being yet supported fully by the stable version of the Linux Kernel, and this laptop not having deep sleep. External peripherals, such as my Wi-Fi printer work fine, however!
+Every problem you run into can be solved either by looking in the [Arch Wiki](https://wiki.archlinux.org/), or by searching in the [Forum](https://bbs.archlinux.org/). Currently, everything in my machine works fine, except Suspending. This is due to AMD's new s2idle not being yet supported fully by the stable version of the Linux Kernel (although, soon enough it will be), and this laptop not having deep sleep. External peripherals, such as my Wi-Fi printer work fine, however!
 
 ## Installation instructions and Steps
 
@@ -194,6 +194,7 @@ Remember to have fun. Don't bloat Arch too much, otherwise it loses it's purpose
 
 - You can boot to a black screen with a blinking cursor. However you can do Alt+F2 and back to Alt+F1, and Gnome/GDM should now boot fine. This is an issue related to X.org and the ```amdgpu``` driver (probably can happen with nvidia too) not loading on the correct time. Look it up on Arch Wiki, or even Google. This issue is everywhere and you shouldn't have an hard time figuring it :) 
 
+- AMD's s2idle does not work well. To get around this issue, and because this laptop does not have deep sleep, I use hibernate or shutdown instead. This laptop contains a NVMe drive, which is significantly faster, so this is less of an hassle. I recommend setting up a swap partition, in order to hibernation to work correctly. You can also use a swap file, but I discourage it.
 
 ## Special Thanks
 
