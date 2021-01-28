@@ -24,7 +24,7 @@ Every problem you run into can be solved either by looking in the [Arch Wiki](ht
 
 ### Step 0: Backup your data
 
-Or prepare it to be migrated. We will format your HDD/SDD entirely, so... yeah
+Or prepare it to be migrated. We will format your SDD entirely, so... yeah
 
 ### Step 1: Download the Arch Linux ISO file
 
