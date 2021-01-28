@@ -178,7 +178,7 @@ Everything should be done now. Exit the chroot by typing ```exit```. Shutdown th
 
 ### Step 12: The first boot
 
-There are a few tweaks you might need to do. Start up your machine and boot. If everything worked fine, you are now greeted by the GDM login window. Login
+There are a few tweaks you might need to do. Start up your machine and boot. If everything worked fine, you are now greeted by the GDM login window (If not, check troubleshooting for a quickfix). Login
 
 Try running the terminal, from the activities menu. If it works, you are good to go! Have fun.
 
@@ -187,6 +187,8 @@ If it fails to launch however, don't panic. I know Linux OSes need their termina
 ## Final notes
 
 With this guide, it should have been possible for you to have a running Arch Linux installation. Any smaller problems can be solved with help from the Wiki or the Foruns. You can also search in Google, you will likely find your issue and how to solve it.
+
+Gnome contains it's own store, which brings the flatpak package manager. You can use it, but I don't think it's that well optimized for Arch Linux. To remove the Gnome store, use ```sudo pacman -R gnome-software```. Consider installing an [AUR Helper](https://wiki.archlinux.org/index.php/AUR_helpers), such as ```yay```. With this tool you will have access to the AUR, and can install a lot of ported/original packages (most of the Jetbrains IDEs are there!). In the future, I will write a guide in how to install an AUR Helper.
 
 Remember to have fun. Don't bloat Arch too much, otherwise it loses it's purposes (Yeah you can start with the yabayabayaba Gnome is a RAM hog, but I don't really care, I like it). Cheers everyone.
 
