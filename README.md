@@ -4,7 +4,7 @@
   - Not a user of RHEL, Slackware, Gentoo or SUSE (and based distros) but I might be able to learn quickly.
   - Comfortable with macOS Terminal, but a little lost using the GUI
   - Not too comfortable with Windows, Powershell is a bit confusing to me, will take time to get used.
-  - Relearning the Kotlin language.
+  - Relearning Kotlin and JS
   - Comfortable with C, C++, Assembly (x86 mostly, but can use other types), Java and Python.
   - Not too good with Web stuff, but can get around CSS and HTML when needed.
 
