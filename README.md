@@ -1,8 +1,8 @@
 ### About me:
-  - Experienced Debian and Debian based distros user.
   - Enthusiast user of [Arch Linux](https://github.com/nunopenim/nunopenim/blob/main/GUIDE_ArchLinuxInstallation.md) (my new favourite distro).
+  - Experienced Debian and Debian based distros user.
   - Not a user of RHEL, Slackware, Gentoo or SUSE (and based distros) but I might be able to learn quickly.
-  - Comfortable with the macOS Terminal, but a little lost using the GUI. I use XCode.
+  - Comfortable with the macOS Terminal. A little lost in the GUI, but getting used to it. I use XCode too!
   - Not too comfortable with Windows, Powershell is a bit confusing to me, will take time to get used.
   - Learning Swift and Dart.
   - Relearning Kotlin.
