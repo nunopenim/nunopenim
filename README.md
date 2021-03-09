@@ -6,7 +6,7 @@
   - Not too comfortable with Windows, Powershell is a bit of an unknown ground to me, will take time to get used.
   - Learning Swift and Dart.
   - Relearning Kotlin.
-  - Comfortable with C, C++, Assembly (x86 mostly, but can use other types), Java and Python.
+  - Comfortable with C, C++, Assembly (MIPS and x86, however I might learn others relatively quickly), Java and Python.
   - Not too good with Web stuff, but can get around CSS and HTML when needed.
 
 ### Repository information:
