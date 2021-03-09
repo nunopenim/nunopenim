@@ -76,17 +76,33 @@ For a full list of options and operations inside the IWCTL utility, type ```help
 
 **Warning: possible loss of data after this. Final warning: This setup is for UEFI machines, not BIOS/CSM**
 
+#### Step 6a: Setting up EFI and Root Partitions
+
 We will use the ```fdisk``` utility for this. List all the disks, by using ```fdisk -l```. Currently, it should appear both the USB Drive and the internal drive(s). Keep in mind the name of the proper one. In my case it was ```/dev/nvme0n1``` (as I mentioned earlier, it can also be ```/dev/sda``` or similar if you are using a NVMe SSD).
 
 Run fdisk with the destination drive. In my case it was ```/dev/nvme0n1```, so I executed as ```fdisk /dev/nvme0n1```. Type ```d``` and press Enter/Return until all the partitions are deleted.
 
-With the disk fully wiped now, type ```g``` and press Enter/Return. This will create a new GPT partition table. Create a **new primary partition** by typing ```n``` and pressing Enter/Return. Make it 500MB. After creating, type ```t``` and press Enter/Return. This will change the partition type to EFI System, instead of Linux.
+With the disk fully wiped now, type ```g``` and press Enter/Return. This will create a new GPT partition table. Create a **new primary partition** by typing ```n``` and pressing Enter/Return. Make it 500MB. This can be done by selecting the initial sector, then in the final sector typing +500M. After creating, type ```t```, and then type ```l``` (lowercase L), and find the number correspondent to the EFI/ESP partition. Type this number and press Enter/Return. This will change the partition type to EFI System, instead of Linux.
 
-Select the needed size (I recommend using the whole SSD, in the future I will add a specific SETUP with a Swap partition). After this, you should have your drive with a single partition, where you will install the operating system. 
+Create a new partition, using ```n```, select the needed size (I recommend using the remaining SSD space, unless you are setting up with a SWAP partition, see 6b). After this, you should have your drive with 2 partitions, a 500MB EFI, and a second one with the remaining space, where you will install the operating system. 
+
+#### Step 6b (Optional): Setting up a SWAP partition
+
+To setup a swap space, you need to know two things: Your drive size, and your RAM size. Knowing your drive size (for example 1TB, in my case) subtract 500MB, from the EFI partition, and then subtract your RAM size plus an extra gigabyte, for tolerance. 
+
+In my case, 1024GB (which is 1TB) - 0.5GB - 17GB = 1006.5GB (I will round it to 1006GB only) 
+
+So the system partition should have this size. The remaining will be SWAP.
+
+Assuming right now you only have the EFI partition in the drive, create a new partition, by typing ```n```, select primary, put the beginning after the EFI partition (by just pressing Enter/Return). The end sector should be +YOURSIZE. In my case, I would do +1006G. 
+
+Next, let's use the remaining space as SWAP. For this, type ```n``` to make a new partition, and press enter/return to use all the default values. After this, type ```t``` to change the partition type, and ```l``` (lowercase L), to check all the possible types. Find an option named SWAP, Linux SWAP or similar (at the time of writting, it is option 82, if I am not mistaken). Type this number in the type selector. If everything went well with no errors, move to step 6c.
+
+#### Step 6c: Finishing up and formatting the drives
 
 Type ```w``` to write all the changes to the disk, and exit fdisk.
 
-Assuming you are back in the Arch terminal, format the new partitions. The first one should be FAT32: do it using ```mkfs.fat -F32 /dev/nvme0n1p1```. The second one should be EXT4. You can do this using the command ```mkfs.ext4 /dev/nvme0n1p2```.
+Assuming you are back in the Arch terminal, format the new partitions. The first one (EFI) should be FAT32: do it using ```mkfs.fat -F32 /dev/nvme0n1p1```. The second one (Root) should be EXT4. You can do this using the command ```mkfs.ext4 /dev/nvme0n1p2```. If you have set up correctly a swap partition, as explained in 6b, you should format it with ```mkswap /dev/nvme0n1p3```. At this point you can also call ```swapon /dev/nvme0n1p3```, if you really want to enable SWAP during the installation, although not needed.
 
 Now you are ready to install Arch Linux!
 
@@ -109,6 +125,8 @@ This step will take a while depending on your Internet connection.
 After installing the packages I specified previously, you will need to configure them properly, otherwise your system will not boot. Start by generating a [fstab file](https://wiki.archlinux.org/index.php/fstab). This can be done using the command ```genfstab -U /mnt >> /mnt/etc/fstab```. 
 
 Good, now you have the correct File System parameters for Arch to boot.
+
+**Note on FSTAB:** If you setup a SWAP partition, you will need to declare it later on the FSTAB, however this is easier to do once we actually have a booting and almost finished system.
 
 #### Step 8b: System configurations
 
@@ -183,6 +201,14 @@ There are a few tweaks you might need to do. Start up your machine and boot. If 
 Try running the terminal, from the activities menu. If it works, you are good to go! Have fun.
 
 If it fails to launch however, don't panic. I know Linux OSes need their terminal, but don't panic. Go to ```Gnome Settings > Region & Language```. It probably is saying some of the configurations are invalid (remember Step 8b?). Tweak these to suit your needs and reboot. Now the terminal should open. Have fun!
+
+### Step 13 (optional): Configuring the SWAP partition in the FSTAB
+
+If you have made a SWAP partition (in step 6b), it is recommended to add it to the FSTAB file. To do this, open Gnome Disks and select your Swap partition. You will see a field named UUID. Keep this UUID handy (check bellow).
+
+![](screens/gnome_disks.png)
+
+BUILDING
 
 ## Final notes
 
