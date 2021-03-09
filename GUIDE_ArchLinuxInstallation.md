@@ -208,13 +208,23 @@ If you have made a SWAP partition (in step 6b), it is recommended to add it to t
 
 ![](screens/gnome_disks.png)
 
-BUILDING
+With this in mind (or in the clipboard), open a new terminal window and type ```sudo nano /etc/fstab```. Under the single entry that is in the file, add a new one with the following format: 
+
+``UUID=<YOURUUID>	swap	swap	defaults	0 0``
+
+The picture bellow illustrates how it should look in the end.
+
+![](screens/nano.png)
+
+Make sure you get the UUID right, otherwise your system won't boot!
+
+After this, save by doing the **CTRL+O**, Enter/Return and **CTRL+X** ritual that we have used a lot during this Guide. Finally, reboot your system and you are all set!
 
 ## Final notes
 
-With this guide, it should have been possible for you to have a running Arch Linux installation. Any smaller problems can be solved with help from the Wiki or the Foruns. You can also search in Google, you will likely find your issue and how to solve it.
+With this guide, it should have been possible for you to have a running Arch Linux installation. Any smaller problems can be solved with help from the Wiki or the Foruns. You can also search in Google, you will likely find your issue and how to solve it. Don't forget to always read the community guidelines and how to report an issue in the foruns!
 
-Gnome contains it's own store, which brings the flatpak package manager. You can use it, but I don't think it's that well optimized for Arch Linux. To remove the Gnome store, use ```sudo pacman -R gnome-software```. Consider installing an [AUR Helper](https://wiki.archlinux.org/index.php/AUR_helpers), such as ```yay```. With this tool you will have access to the AUR, and can install a lot of ported/original packages (most of the Jetbrains IDEs are there!). In the future, I will write a guide in how to install an AUR Helper.
+Gnome contains it's own store, which brings the flatpak package manager. You can use it, but I don't think it's that well optimized for Arch Linux. To remove the Gnome store, use ```sudo pacman -R gnome-software```. Consider installing an [AUR Helper](https://wiki.archlinux.org/index.php/AUR_helpers), such as ```yay```. With this tool you will have access to the AUR, and can install a lot of ported/original packages (most of the Jetbrains IDEs are there!).
 
 Remember to have fun. Don't bloat Arch too much, otherwise it loses it's purposes (Yeah you can start with the yabayabayaba Gnome is a RAM hog, but I don't really care, I like it). Cheers everyone.
 
