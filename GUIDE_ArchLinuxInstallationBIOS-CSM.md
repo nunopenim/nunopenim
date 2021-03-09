@@ -2,6 +2,8 @@
 
 > Nuno Penim, 2020
 
+**This guide is outdated, consider reading the new guide and adapting the BIOS/CSM steps from this one to that guide**
+
 ## Disclaimer
 
 I am not responsible for any data loss that might occur. This guide will tell you how to install Arch Linux as **the single OS in your machine**. Back up your stuff, and don't use this guide if you are looking for a dual boot.
