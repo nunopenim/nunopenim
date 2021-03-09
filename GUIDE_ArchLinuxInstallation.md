@@ -220,6 +220,20 @@ Make sure you get the UUID right, otherwise your system won't boot!
 
 After this, save by doing the **CTRL+O**, Enter/Return and **CTRL+X** ritual that we have used a lot during this Guide. Finally, reboot your system and you are all set!
 
+### Step 14 (optional): Installing an AUR Helper
+
+An AUR helper allows you to automate your search and installation of packages in the [Arch Linux User Repository (AUR)](https://aur.archlinux.org/). This repository is a community driven repository that contains [PKGBUILD](https://wiki.archlinux.org/index.php/PKGBUILD) files, which allow you to build a package using the [makepkg](https://wiki.archlinux.org/index.php/Makepkg) utility, and then installing it with pacman, as if it was any other Arch Linux package. The AUR will allow you to have even more packages available for use and installation (such as the JetBrains IDEs, Android Studio, Flutter, and other utilities that I love to use).
+
+Why is this step not mandatory? Some users have reported sometimes AUR packages interfering with official packages, causing their systems not to boot, specially after updates. This never happened to me, and I am biased to say they did something wrong at some point for it to fail. However since this is an objective Guide, I am reporting facts here, and the fact is that some users reported AUR packages interfering with official packages :)
+
+Anyway, to get to the point, I recommend using [Yet Another Yogurt (or yay)](https://github.com/Jguer/yay), since it has always been reliable to me and it's syntax is similar to pacman's. As with all AUR Helpers, yay should be installed in a way that you are not forced to use superuser privilleges on it, unlike some websites with guides report. Running yay as sudo can be risky!
+
+You will need to install git (```sudo pacman -Syu git```) if you haven't yet. After this, clone yay's repository into your home folder (```git clone --recursive https://aur.archlinux.org/yay-git.git```). Change directory to the yay-git directory, so we can build it (```cd yay-git```). After this, build and install the yay package (```makepkg -si```). It will probably ask you confirmation before installing you a GoLang wrapper/interpreter, accept it. After the command runs, if no error has been reported, you are all set. If you want, you can delete the yay-git folder in your home folder, it's not doing anything there anymore.
+
+To use yay, type in the terminal ```yay -S <packagename>``` to install a package, ```yay -Syu <optional:package_name>``` to update all packages and package lists and optionally install a package, just like you would with pacman.
+
+**Note:** yay might ask you for your sudo password, despite not running it as "sudo". This is fine, since yay calls "sudo pacman" from behind the scenes sometimes!
+
 ## Final notes
 
 With this guide, it should have been possible for you to have a running Arch Linux installation. Any smaller problems can be solved with help from the Wiki or the Foruns. You can also search in Google, you will likely find your issue and how to solve it. Don't forget to always read the community guidelines and how to report an issue in the foruns!
