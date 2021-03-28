@@ -4,9 +4,8 @@
   - Not a user of RHEL, Slackware, Gentoo or SUSE (and based distros) but I might be able to learn quickly.
   - Comfortable with the macOS Terminal. A little lost in the GUI, but getting used to it. Starting to use XCode too!
   - Not too comfortable with Windows, Powershell is a bit of an unknown ground to me, will take time to get used.
-  - Learning Swift and Dart (Mostly applied to the Flutter framework).
-  - Relearning Kotlin.
-  - Comfortable with C, C++, Assembly (MIPS and x86, however I might learn others relatively quickly), Java and Python.
+  - Learning Dart, Swift and Kotlin (applied to mobile development)
+  - Comfortable with C, C++, Assembly (MIPS and x86, however I might learn others relatively quickly), a *little* of Objective-C, Java, Python and Kotlin.
   - Not too good with Web stuff, but can get around basic CSS and basic HTML when needed (Javascript and Typescript are okay).
 
 ### Repository information:
