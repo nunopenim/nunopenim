@@ -2,8 +2,8 @@
   - Enthusiast user of [Arch Linux](https://github.com/nunopenim/nunopenim/blob/main/GUIDE_ArchLinuxInstallation.md) (my new favourite distro and daily driver, learning every day).
   - Experienced user of Debian and Debian based distros.
   - Not a user of RHEL, Slackware, Gentoo or SUSE (and based distros) but I might be able to learn quickly.
-  - Comfortable with the macOS Terminal. A little lost in the GUI, but getting used to it. Starting to use XCode too!
-  - Not too comfortable with Windows, Powershell is a bit of an unknown ground to me, will take time to get used.
+  - Comfortable with the macOS (Specially the terminal, feels like home as it is a UNIX compliant OS). Starting to use XCode too!
+  - Not too comfortable with Windows (only fully used Windows 7 until about 2016, newer versions are a bit confusing to me).
   - Learning Dart, Swift and Kotlin (applied to mobile development)
   - Comfortable with C, C++, Assembly (MIPS and x86, however I might learn others relatively quickly), Java, Python, a *little* of Objective-C, and Kotlin.
   - Not too good with Web stuff, but can get around basic CSS and basic HTML when needed (Javascript and Typescript are okay).
