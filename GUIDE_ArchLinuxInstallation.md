@@ -14,7 +14,7 @@ Thank you.
 
 Congratulations, if you are reading this, you found a very special document I wrote not only to help myself, but to help other like minded individuals.
 
-After this, you should have a full working Arch Linux installation, running the Gnome DE and with the GDM. If this is not what you are here for, Google how to do your specific Setup. I will not answer any pull requests.
+After this, you should have a full working Arch Linux installation, running the Gnome DE and with GDM. If this is not what you are here for, Google how to do your specific Setup. I will not answer any pull requests.
 
 This was done specifically in a 2020 Asus VivoBook X521IA (M533IA), with an AMD Ryzen 7 4700U, 16GiB of RAM and a 1TB NVMe SSD. It should work on any other machine though, with UEFI support. If you are looking for a BIOS/CSM version, you can check out my [older guide](https://github.com/nunopenim/nunopenim/blob/main/GUIDE_ArchLinuxInstallationBIOS-CSM.md)
 
@@ -24,7 +24,7 @@ Every problem you run into can be solved either by looking in the [Arch Wiki](ht
 
 ### Step 0: Backup your data
 
-Or prepare it to be migrated. We will format your SDD entirely, so... yeah
+Or prepare it to be migrated. We will format your SSD entirely, so... yeah
 
 ### Step 1: Download the Arch Linux ISO file
 
