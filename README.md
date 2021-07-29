@@ -1,6 +1,6 @@
 ### About me:
+  - Enthusiast user of [Arch Linux](https://github.com/nunopenim/nunopenim/blob/main/GUIDE_ArchLinuxInstallation.md), my daily driver and currently learning about it every day.
   - Experienced user of Debian and Debian based distros (Big love on Ubuntu and spins, specially Xubuntu).
-  - Enthusiast user of [Arch Linux](https://github.com/nunopenim/nunopenim/blob/main/GUIDE_ArchLinuxInstallation.md).
   - Not a user of RHEL, Slackware, Gentoo, SUSE or BSD (and based distros) but I might be able to learn quickly.
   - Comfortable with Apple's macOS (Specially the terminal, feels like home as it is a UNIX compliant OS). Starting to use XCode too!
   - Okay with Windows, but not too comfortable (only fully used Windows 7 until about 2016, newer versions are a bit confusing to me).
