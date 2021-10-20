@@ -114,7 +114,7 @@ Anyway, type ```pacman -Syy```. This will sync the PacMan repositories. Similar 
 
 After PacMan did it's thing, mount your newly made root partition (I will assume it's ```/dev/nvme0n1p2```, from the previous step). You can do this by typing ```mount /dev/nvme0n1p2 /mnt```.
 
-We are ready! Type ```pacstrap /mnt base base-devel linux linux-firmware nano```. This will install Arch Linux, the Linux Kernel and Firmware, some extra libraries for developers, nano, because... you will need a text editor. You can use vim instead of nano if you want, but having a CLI text editor is an important tool and requirement.
+We are ready! Type ```pacstrap /mnt base base-devel linux linux-firmware linux-headers networkmanager nano```. This will install Arch Linux, the Linux Kernel, Firmware and Headers, some extra libraries for developers, NetworkManager (used by the most common DE - if you are going for a terminal only version, DHCPCD is easier to configure!), nano, because... you will need a text editor. You can use vim instead of nano if you want, but having a CLI text editor is an important tool and requirement.
 
 This step will take a while depending on your Internet connection.
 
