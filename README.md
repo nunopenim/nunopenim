@@ -5,7 +5,8 @@
   - Not a user of RHEL, Slackware, Gentoo, SUSE or BSD (and based distros) but I might be able to learn quickly.
   - Okay with Windows, but not too comfortable (only fully used Windows 7 until about 2016, newer versions, and PowerShell synthax are a bit confusing to me).
   - Learning Swift in the little free time I have (I'm actually enjoying it a lot).
-  - Comfortable with C, C++, Assembly (MIPS and x86, however I might learn others relatively quickly), Java, Python, a *little* of Objective-C, Kotlin and Dart (applied to mobile development and the Flutter framework).
+  - Huge love for C, C++ (with GLSL too) and Assembly (MIPS and x86, but could learn others quickly).
+  - Comfortable with Java, Python, Kotlin and Dart (applied to mobile development and the Flutter framework).
   - Not too good with Web stuff, but can get around basic CSS and basic HTML when needed (Javascript and Typescript are okay, but not a preference).
 
 ### Repository information:
