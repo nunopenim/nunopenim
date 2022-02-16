@@ -42,7 +42,7 @@ Disable Secure Boot! That's all I have to say. If you use a SATA SSD, set SATA m
 
 As for peripherials such as the Web Camera, I recommend activating everything. It is not a requirement, but it is needed to make sure everything works correctly. After the installation, you can disable the ones you don't use again.
 
-**Note for SATA SSD users:** You probably still can use this guide, but more in the front, when I mention something like ```/dev/nvme0n1```, in your case it should be ```/dev/sda``` or similar. The guide is made for NVMe M.2 drives, because this is the future.
+**Note for SATA SSD users:** You probably still can use this guide, but ahead in the guide, when I mention something like ```/dev/nvme0n1```, in your case it should be ```/dev/sda``` or similar. The guide is made for NVMe M.2 drives, because this is the future.
 
 ### Step 4: Booting into the Live USB environment
 
@@ -78,7 +78,7 @@ For a full list of options and operations inside the IWCTL utility, type ```help
 
 #### Step 6a: Setting up EFI and Root Partitions
 
-We will use the ```fdisk``` utility for this. List all the disks, by using ```fdisk -l```. Currently, it should appear both the USB Drive and the internal drive(s). Keep in mind the name of the proper one. In my case it was ```/dev/nvme0n1``` (as I mentioned earlier, it can also be ```/dev/sda``` or similar if you are using a NVMe SSD).
+We will use the ```fdisk``` utility for this. List all the disks, by using ```fdisk -l```. Currently, it should appear both the USB Drive and the internal drive(s). Keep in mind the name of the proper one. In my case it was ```/dev/nvme0n1``` (as I mentioned earlier, it can also be ```/dev/sda``` or similar if you are using a SATA SSD).
 
 Run fdisk with the destination drive. In my case it was ```/dev/nvme0n1```, so I executed as ```fdisk /dev/nvme0n1```. Type ```d``` and press Enter/Return until all the partitions are deleted.
 
