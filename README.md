@@ -11,8 +11,8 @@
 
 
 ### Academic Information:
- - Computer Engineer (Bachelor in Computer Engineering)
- - Finishing my Master's degree in Data Science and Advanced Analytics
+ - Computer Engineer (Bachelor in Computer Engineering Completed [2018-2021])
+ - Finishing my Master's degree in Data Science and Advanced Analytics [2021-On Going]
 
 
 ### Repository Information:
