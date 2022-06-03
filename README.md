@@ -3,7 +3,7 @@
   - Experienced user of Debian and Debian based distros. Big love to Ubuntu and Xubuntu!
   - Comfortable with Apple's macOS (Specially the terminal, feels like home as it is a UNIX compliant OS). Using XCode too!
   - Not a user of RHEL, Slackware, Gentoo, SUSE or BSD (and based distros) but I might be able to learn quickly.
-  - Okay with Windows, but not too comfortable (only fully used Windows 7 until about 2016, newer versions, and PowerShell synthax are a bit confusing to me).
+  - Okay with Windows, but not too comfortable (only fully used Windows 7 until about 2016, the UI on newer versions is confusing, but if I stick to terminal and WSL, I'll be fine!).
   - Learning Swift in the little free time I have (I'm actually enjoying it a lot).
   - Huge love for C, C++ (with GLSL too) and Assembly (MIPS and x86, but could learn others quickly).
   - Comfortable with Java, Python, Kotlin and Dart (applied to mobile development and the Flutter framework).
