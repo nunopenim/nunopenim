@@ -132,7 +132,8 @@ Good, now you have the correct File System parameters for Arch to boot.
 
 Now we will configure the System itself. Start by chrooting into it, by doing ```arch-chroot /mnt```. This is your system now, it no longer is the Live CD/USB. Your keyboard *might* be in the default settings, if such, refer to Step 5a again! Networking should still work fine, though.
 
-We will start by configuring the Timezone. Run the ```timedatectl list-timezones``` command to list all available timezones. In my case, I will use ```Europe/Lisbon```. After you find the correct timezone for you, you can set it by running the command ```timedatectl set-timezone <TZ>```. In my case: ```timedatectl set-timezone Europe/Lisbon```.
+We will start by configuring the Timezone. [Here's a list of time zones you may choose from](https://manpages.ubuntu.com/manpages/xenial/man3/DateTime::TimeZone::Catalog.3pm.html). In my case, I will use ```Europe/Lisbon```.<br>
+After you find the correct timezone for you, you can set it by running the command ```ln -sf /usr/share/zoneinfo/<TZ> /etc/localtime```. In my case: ```ln -sf /usr/share/zoneinfo/Europe/Lisbon /etc/localtime```.
 
 The next step will be setting the default Language/Locale. Run ```nano /etc/locale.gen``` to open the ```/etc/locale.gen``` file (or use the text editor you installed in Step 7). In this file, uncomment your prefered Language and Locale settings (delete the # in front), in my case, I selected ```en_US.UTF-8```. Save and quit the editor. In Nano this is done with **CTRL+O**, Enter/Return, and **CTRL+X**
 
@@ -176,7 +177,7 @@ Now that you have a new user, we will configure SUDO, since you shouldn't be usi
 
 SUDO comes with a special editor called ```visudo```, to allow us to edit it's configurations without damaging sudo. However visudo needs to be configured to use a CLI text editor. In our case, as with the rest of this guide, we will use ```nano``` as our text editor. To use nano as the visudo editor, run the command ```EDITOR=nano visudo```.
 
-To add your newly created user to the sudoers, all you need to do is locate the line that says ```root ALL=(ALL) ALL``` and bellow add the line ```<usr> ALL=(ALL) ALL```, where <usr> is the username you created. As an example, in my case it would be ```nuno ALL=(ALL) ALL```. Save and exit, using the **CTRL+O**, Enter/Return and **CTRL+X** trick, that you should know by now.
+To add your newly created user to the sudoers, all you need to do is locate the line that says ```root ALL=(ALL:ALL) ALL``` and bellow add the line ```<usr> ALL=(ALL) ALL```, where <usr> is the username you created. As an example, in my case it would be ```nuno ALL=(ALL:ALL) ALL```. Save and exit, using the **CTRL+O**, Enter/Return and **CTRL+X** trick, that you should know by now.
 
 Congratulations, you now have a sudo user.
 
