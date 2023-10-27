@@ -11,5 +11,5 @@
 
 
 ### Academic Information:
- - Computer Engineer (Bachelor in Computer Engineering Completed [2018-2021] Final Grade: 16/20 (80%))
- - Finishing my Master's degree in Data Science and Advanced Analytics [2021-On Going]
+ - Computer Engineer (Bachelor in Computer Engineering completed [2018-2021] Final Grade: 16/20 (80%))
+ - Data Scientist (Master's in Data Science and Advanced Analytics completed [2021-2023] Final Grade: 14/20 (70%))
